@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!-- Exercise 1 Setter Injection-->
+	<bean class="class1.Student" name="student1">
+		<property name="id">
+			<value>101</value>
+		</property>
+		<property name="name">
+			<value>Jeff Catulay</value>
+		</property>
+		<property name="email">
+			<value>j@gmail.com</value>
+		</property>
+	</bean>
+	
+	<!-- Exercise 2 Setter Injection using value as attribute and P Schema-->
+	<bean class="class1.Student" name="student2">
+		<property name="id" value="102"/>
+		<property name="name" value="Erica Briones"/>
+		<property name="email" value="e@gmail.com"/>
+	</bean>
+	
+	<!-- Using P Schema -->
+	<bean class="class1.Student" name="student3" 
+	p:id="103" p:name="Edcel Balcos" p:email="b@gmail.com" />
+	
+	<!-- Exercise 3 Setter Injection using Collection Type-->
+	<bean class="class1.Employee" name="employee1">
+		<property name="name" value="Jeff"/>
+		<property name="phones">
+			<list>
+				<value>111</value>
+				<value>222</value>
+			</list>
+		</property>
+		<property name="address">
+			<set>
+				<value>USA</value>
+				<value>PH</value>
+			</set>
+		</property>
+		<property name="departments">
+			<map>
+				<entry key="admin" value="PH"/>
+				<entry key="sales" value="USA"/>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Exercise 4 Setter Injection using Reference Type-->
+	<bean class="class1.Address" name="address1">
+		<property name="city" value="Manila"/>
+		<property name="country" value="PH"/>
+	</bean>
+	
+	<bean class="class1.Customer" name="customer1">
+		<property name="name" value="Jeff Catulay"/>
+		<property name="address" ref="address1"/>
+	</bean>
+		
+</beans>
