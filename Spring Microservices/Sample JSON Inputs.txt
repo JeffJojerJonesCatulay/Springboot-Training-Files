@@ -1,0 +1,25 @@
+// Employee
+{
+   "firstName":"Ted",
+   "lastName":"Smith",
+   "email":"t@gmail.com",
+   "departmentId":1
+}
+
+{
+   "firstName":"John",
+   "lastName":"Paul",
+   "email":"j@gmail.com",
+   "departmentId":2
+}
+
+// Department
+{
+    "departmentName" : "Admin",
+    "departmentAddress": "India"
+}
+
+{
+    "departmentName" : "Sales",
+    "departmentAddress": "USA"
+}
