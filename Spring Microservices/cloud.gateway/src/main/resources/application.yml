@@ -1,0 +1,22 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  config:
+    import: optional:configserver:http://localhost:9296
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: EMPLOYEE-SERVICE
+        uri: http://localhost:9001
+        predicates:
+        - Path=/api/employees/**
+      - id: DEPARTMENT-SERVICE
+        uri: http://localhost:9002
+        predicates:
+        - Path=/api/departments/**
